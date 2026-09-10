@@ -1,5 +1,7 @@
 # strapi-plugin-rbac
 
+[![npm](https://img.shields.io/npm/v/strapi-plugin-rbac?logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/strapi-plugin-rbac) ![license MIT](https://img.shields.io/badge/license-MIT-3DA639) ![Strapi 5](https://img.shields.io/badge/Strapi-5-4945FF?logo=strapi&logoColor=white) ![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white) ![React 18](https://img.shields.io/badge/React-18-20232A?logo=react&logoColor=white)
+
 Field-level access control for Strapi 5: **which role may read or write which field**, plus
 a **fact-field lock** that freezes approved values.
 
@@ -7,7 +9,7 @@ Strapi's own RBAC stops at the content-type. This narrows it to the field, and a
 that actually matters editorially — a rate or a disclaimer signed off at approval must not
 change quietly afterwards.
 
-Part of [Strapi Content Hub](../../README.md).
+One of a family of standalone Strapi 5 plugins — see [the others](https://github.com/rhyoharianja?tab=repositories).
 
 > **This plugin intercepts core behaviour.** Re-run its regression suite on every Strapi
 > upgrade — see [Regression tests](#regression-tests).
@@ -21,14 +23,20 @@ pnpm add strapi-plugin-rbac
 ```ts
 // config/plugins.ts
 export default {
-  'content-hub-field-rbac': {
+  'rbac': {
     enabled: true,
     resolve: 'strapi-plugin-rbac',
   },
 };
 ```
 
-The [content-workflow plugin](../strapi-plugin-content-workflow/README.md) is an **optional**
+> **Keep the key `rbac` exactly as it is.** It is the plugin id, and the id is
+> compiled into the package — the admin menu link, the `plugin::rbac.*`
+> custom-field uids, the route prefix and every internal `strapi.plugin(...)` lookup.
+> Renaming it does not rename those, so the plugin half-loads and fails in ways that do
+> not look like a naming problem. `resolve` points at the package; the key does not.
+
+The [content-workflow plugin](https://github.com/rhyoharianja/strapi-plugin-workflow) is an **optional**
 peer: field rules work without it, only the fact-field lock needs a stage to key off.
 
 ## Where it intercepts, and why
@@ -178,7 +186,7 @@ That text arrives in the browser, in the `message` of a 403.
 > Proven by making the identical refusal twice: as `ForbiddenError` it returned `"Forbidden"`,
 > as `PolicyError` it returned the real text.
 
-The reason is still logged as well, tagged `[content-hub-field-rbac] denied …`, so a refusal
+The reason is still logged as well, tagged `[rbac] denied …`, so a refusal
 can be traced after the fact.
 
 ## Regression tests

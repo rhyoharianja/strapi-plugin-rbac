@@ -1,1 +1,1 @@
-export const PLUGIN_ID = "content-hub-field-rbac";
+export const PLUGIN_ID = "rbac";

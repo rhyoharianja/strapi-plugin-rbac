@@ -116,7 +116,7 @@ const rules = ({ strapi }: { strapi: Core.Strapi }) => {
     async stageOf(uid: string, documentId: string | undefined): Promise<string | null> {
       if (!documentId) return null;
 
-      const workflow = strapi.plugin('content-hub-workflow');
+      const workflow = strapi.plugin('workflow');
       if (!workflow) return null;
 
       try {
@@ -124,7 +124,7 @@ const rules = ({ strapi }: { strapi: Core.Strapi }) => {
       } catch (error) {
         // A stage lookup failure must not block the write it was only annotating.
         strapi.log.warn(
-          `[content-hub-field-rbac] stage lookup failed for ${uid}/${documentId}: ${
+          `[rbac] stage lookup failed for ${uid}/${documentId}: ${
             (error as Error).message
           }`
         );

@@ -1,10 +1,10 @@
 /** Contract shared by this plugin's server and admin bundles. */
 
-export const PLUGIN_ID = 'content-hub-field-rbac' as const;
+export const PLUGIN_ID = 'rbac' as const;
 
 export const UID = {
-  fieldRule: 'plugin::content-hub-field-rbac.field-rule',
-  factField: 'plugin::content-hub-field-rbac.fact-field',
+  fieldRule: 'plugin::rbac.field-rule',
+  factField: 'plugin::rbac.fact-field',
 } as const;
 
 // ── The RBAC vocabulary ─────────────────────────────────────────────────────────────────────

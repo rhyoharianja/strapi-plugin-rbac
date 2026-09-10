@@ -7,7 +7,7 @@
  */
 export default {
   kind: 'collectionType',
-  collectionName: 'content_hub_fact_fields',
+  collectionName: 'rbac_fact_fields',
   info: {
     singularName: 'fact-field',
     pluralName: 'fact-fields',

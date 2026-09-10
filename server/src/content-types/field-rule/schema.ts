@@ -6,7 +6,7 @@
  */
 export default {
   kind: 'collectionType',
-  collectionName: 'content_hub_field_rules',
+  collectionName: 'rbac_field_rules',
   info: {
     singularName: 'field-rule',
     pluralName: 'field-rules',
