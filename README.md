@@ -214,6 +214,16 @@ the boundary they rest on is:
 If an upgrade changes any of these, the unit tests still pass while enforcement silently
 stops — so check them too.
 
+## Support
+
+These plugins are free and MIT-licensed. If one saved you a day of work, you are welcome to
+say thanks:
+
+[![PayPal](https://img.shields.io/badge/PayPal-donate-00457C?logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/sgkharianja)
+[![Saweria](https://img.shields.io/badge/Saweria-dukung-FF5C5C?logo=buymeacoffee&logoColor=white)](https://saweria.co/rhioharianja)
+
+Bug reports and pull requests are worth just as much.
+
 ## License
 
 MIT © Suryo Galih Kencana Harianja
