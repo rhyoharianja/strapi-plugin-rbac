@@ -2,6 +2,8 @@
 
 [![npm](https://img.shields.io/npm/v/strapi-plugin-rbac?logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/strapi-plugin-rbac) ![license MIT](https://img.shields.io/badge/license-MIT-3DA639) ![Strapi 5](https://img.shields.io/badge/Strapi-5-4945FF?logo=strapi&logoColor=white) ![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white) ![React 18](https://img.shields.io/badge/React-18-20232A?logo=react&logoColor=white)
 
+[![PayPal](https://img.shields.io/badge/PayPal-donate-00457C?logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/sgkharianja) [![Saweria](https://img.shields.io/badge/Saweria-dukung-FF5C5C?logo=buymeacoffee&logoColor=white)](https://saweria.co/rhioharianja)
+
 Field-level access control for Strapi 5: **which role may read or write which field**, plus
 a **fact-field lock** that freezes approved values.
 
